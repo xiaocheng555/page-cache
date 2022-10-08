@@ -21,8 +21,12 @@
   </div>
 </template>
 
-<script setup lang="ts" name="Home">
+<script setup lang="ts">
 import useRouteCache from '@/hooks/useRouteCache'
+
+defineOptions({
+  name: 'Home'
+})
 
 const { removeCacheEntry } = useRouteCache()
 

@@ -24,7 +24,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="List">
+<script setup lang="ts">
 import { onBeforeMount, onActivated, ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -32,6 +32,10 @@ interface Item {
   id?: number, 
   content?: string 
 }
+
+defineOptions({
+  name: 'List'
+})
 
 const isCache = ref(false)
 const list = ref<Item []>([])

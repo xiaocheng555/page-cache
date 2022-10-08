@@ -26,18 +26,7 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  beforeRouteEnter (to: RouteRecordNormalized, from: RouteRecordNormalized) {
-    if (from.name === 'Home') {
-      const { removeCacheEntry } = useRouteCache()
-      removeCacheEntry('List1')
-    }
-  }
-}
-</script>
-
-<script setup lang="ts" name="Home">
+<script setup lang="ts">
 import useRouteCache from '@/hooks/useRouteCache'
 import { onBeforeMount, onActivated, ref, computed } from 'vue'
 import { useRouter, RouteRecordNormalized } from 'vue-router'
@@ -46,6 +35,16 @@ interface Item {
   id?: number, 
   content?: string 
 }
+
+defineOptions({
+  name: 'List1',
+  beforeRouteEnter (to: RouteRecordNormalized, from: RouteRecordNormalized) {
+    if (from.name === 'Home') {
+      const { removeCacheEntry } = useRouteCache()
+      removeCacheEntry('List1')
+    }
+  }
+})
 
 const isCache = ref(false)
 const list = ref<Item []>([])

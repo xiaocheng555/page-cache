@@ -21,7 +21,7 @@
       ]
     },
     "types": [
-      "unplugin-vue-define-options"
+      "unplugin-vue-define-options/macros-global"
     ]
   },
   "include": [

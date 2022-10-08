@@ -24,17 +24,6 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  beforeRouteEnter (to: RouteLocationNormalized, from: RouteLocationNormalized) {
-    if (from.name === 'Home') {
-      const listStore = useListStore()
-      listStore.$reset()
-    }
-  }
-}
-</script>
-
 <script setup lang="ts">
 import useListStore from '@/store/listStore'
 import { computed, onBeforeMount, ref } from 'vue'
@@ -44,6 +33,15 @@ interface Item {
   id?: number, 
   content?: string 
 }
+
+defineOptions({
+  beforeRouteEnter (to: RouteLocationNormalized, from: RouteLocationNormalized) {
+    if (from.name === 'Home') {
+      const listStore = useListStore()
+      listStore.$reset()
+    }
+  }
+})
 
 const listStore = useListStore()
 const router = useRouter()
