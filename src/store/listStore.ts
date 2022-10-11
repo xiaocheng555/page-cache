@@ -9,7 +9,7 @@ const useListStore = defineStore('list', {
   // 推荐使用 完整类型推断的箭头函数
   state: () => {
     return {
-      useCache: false,
+      isRefresh: true,
       pageSize: 30,
       currentPage: 1,
       list: [] as Item[],
@@ -22,6 +22,9 @@ const useListStore = defineStore('list', {
     },
     setCurRow (data: Item) {
       this.curRow = data
+    },
+    setIsRefresh (data: boolean) {
+      this.isRefresh = data
     }
   }
 })

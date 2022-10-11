@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-page-header @back="goBack">
-      <template #content>keep-alive 缓存2</template>
+      <template #content>keep-alive 缓存列表页2</template>
     </el-page-header>
     <el-alert style="margin: 30px 0;">keep alive 缓存状态：<el-tag :type="isCache ? '' : 'info'">{{isCache ? '命中缓存' : '未缓存' }}</el-tag></el-alert>
     

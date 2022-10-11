@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-page-header @back="goBack">
-      <template #content>父子路由实现缓存</template>
+      <template #content>父子路由实现列表页缓存</template>
     </el-page-header>
     <el-table v-loading="loading" :data="tableData" border style="width: 100%; margin-top: 30px;">
       <el-table-column prop="id" label="id" />

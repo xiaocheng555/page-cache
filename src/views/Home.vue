@@ -3,19 +3,19 @@
     <h1>首页</h1>
     <ul class="links">
       <li>
-        <router-link to="/list" @click="removeCacheBeforeEnter">keep-alive 缓存（点击链接时清空缓存）</router-link>
+        <router-link to="/list" @click="removeCacheBeforeEnter">keep-alive 缓存列表页（点击链接时清空缓存）</router-link>
       </li>
       <li>
-        <router-link to="/list1">keep-alive 缓存2（进入页面后清空缓存）</router-link>
+        <router-link to="/list1">keep-alive 缓存列表页2（进入页面后清空缓存）</router-link>
       </li>
       <li>
-        <router-link to="/list3">状态存储实现缓存</router-link>
+        <router-link to="/list3">状态管理实现列表页缓存</router-link>
       </li>
       <li>
-        <router-link to="/list2">父子路由实现缓存</router-link>
+        <router-link to="/list2">父子路由实现列表页缓存</router-link>
       </li>
       <li>
-        <router-link to="/list4">页面弹窗实现缓存</router-link>
+        <router-link to="/list4">弹窗实现列表页缓存</router-link>
       </li>
     </ul>
   </div>

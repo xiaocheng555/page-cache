@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-page-header @back="goBack">
-      <template #content>状态存储实现缓存</template>
+      <template #content>状态管理实现列表页缓存</template>
     </el-page-header>
     <el-table v-loading="loading" :data="tableData" border style="width: 100%; margin-top: 30px;">
       <el-table-column prop="id" label="id" />
@@ -19,8 +19,6 @@
       layout="total, prev, pager, next"
       :total="listStore.list.length"
     />
-    
-    <router-view class="popyp-page"></router-view>
   </div>
 </template>
 
@@ -94,26 +92,17 @@ function goBack () {
 }
 
 onBeforeMount(() => {
-  if (!listStore.useCache) {
+  if (listStore.isRefresh) {
     loading.value = true
     setTimeout(() => {
       listStore.setList(getData())
       loading.value = false
     }, 1000)
-    listStore.useCache = true
+    listStore.setIsRefresh(false)
   }
 })
 </script>
 
 <style lang='less' scoped>
-.popyp-page {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: #fff;
-  overflow: auto;
-}
+
 </style>
